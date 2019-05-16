@@ -35,6 +35,9 @@ import org.ea.sqrl.activites.identity.ResetPasswordActivity;
 import org.ea.sqrl.activites.identity.ShowIdentityActivity;
 import org.ea.sqrl.activites.StartActivity;
 import org.ea.sqrl.activites.UrlLoginActivity;
+import org.ea.sqrl.processors.EntropyHarvester;
+import org.ea.sqrl.processors.SQRLStorage;
+import org.ea.sqrl.utils.EncryptionUtils;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Rule;
@@ -276,6 +279,9 @@ public class AccessibilityInstrumentedTest {
                 .getTargetContext();
         Intent intent = new Intent(targetContext, RescueCodeEnterActivity.class);
         intent.putExtra("RUNNING_TEST", true);
+
+        SQRLStorage.getInstance(targetContext).newRescueCode(EntropyHarvester.getInstance());
+
         RescueCodeEnterActivity a = rescueCodeEnterActivityRule.launchActivity(intent);
         unlockScreen(a);
 

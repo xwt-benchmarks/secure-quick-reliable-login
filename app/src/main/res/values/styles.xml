@@ -1,17 +1,17 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="CommonTheme">
-        <item name="actionButtonStyle">@style/myActionButtonStyle</item>
     </style>
     
     <style name="myActionButtonStyle" parent="Widget.AppCompat.ActionButton">
-        <item name="android:width">48dp</item>
-        <item name="android:height">48dp</item>
         <item name="android:contentDescription">@string/actionbar_menu</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
     </style>
 
     <style name="AppTheme.ActionBar" parent="Widget.AppCompat.ActionBar">
         <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
     </style>
 
     <!-- Base application theme. -->
@@ -21,6 +21,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+        <item name="android:actionOverflowButtonStyle">@style/myActionButtonStyle</item>
+        <item name="actionOverflowButtonStyle">@style/myActionButtonStyle</item>
     </style>
 
 
