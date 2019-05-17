@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    
+
     repositories {
         google()
         jcenter()
@@ -12,6 +12,17 @@ buildscript {
         classpath 'org.owasp:dependency-check-gradle:4.0.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        // fail eagerly on version conflict (includes transitive dependencies)
+        // e.g. multiple different versions of the same dependency (group and name are equal)
+        failOnVersionConflict()
+
+        // prefer modules that are part of this build (multi-project or composite build) over external modules
+        preferProjectModules()
     }
 }
 
