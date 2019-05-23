@@ -52,7 +52,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
  *
  * @author Daniel Persson
  */
-@RunWith(AndroidJUnit4.class)
+@LargeTest
+@RunWith(JUnit4.class)
 public class AccessibilityInstrumentedTest {
     @Rule
     public ActivityTestRule<SimplifiedActivity> simplifiedActivityTestRule =
