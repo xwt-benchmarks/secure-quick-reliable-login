@@ -41,15 +41,16 @@ dependencies {
     implementation 'com.google.zxing:core:3.2.1'
     implementation 'com.github.joshjdevl.libsodiumjni:libsodium-jni-aar:2.0.1'
     implementation 'com.google.android:flexbox:1.0.0'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-intents:3.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-accessibility:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-accessibility:3.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-web:3.0.2'
     androidTestImplementation 'com.android.support.test.espresso.idling:idling-concurrent:3.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-idling-resource:3.0.2'
-    androidTestImplementation 'com.google.guava:guava:24.1-jre'
+    androidTestImplementation 'com.google.guava:guava:27.0.1-android'
 }
