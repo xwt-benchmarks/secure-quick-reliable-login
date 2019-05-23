@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.accessibility.AccessibilityChecks;
 import android.support.test.rule.ActivityTestRule;
+import android.support.test.filters.LargeTest;
 import android.view.WindowManager;
 
 import org.ea.sqrl.activites.LanguageActivity;
