@@ -139,6 +139,11 @@ public class AccessibilityInstrumentedTest {
                 WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED |
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         activity.runOnUiThread(wakeUpDevice);
+        try {
+            Thread.sleep(1000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
