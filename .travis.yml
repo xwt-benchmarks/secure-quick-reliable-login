@@ -50,9 +50,8 @@ script:
   - ./gradlew assembleDebugAndroidTest --console=plain --stacktrace
   - $ANDROID_HOME/emulator/emulator -avd test -no-window &
   - bash android-wait-for-emulator
-  - ./gradlew installDebugAndroidTest --console=plain --stacktrace
   - adb shell input keyevent 82
-  - adb shell am instrument -w com.example.test/android.support.test.runner.AndroidJUnitRunner
+  - ./gradlew connectedDebugAndroidTest --console=plain --stacktrace
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
