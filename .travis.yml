@@ -47,10 +47,10 @@ before_install:
   - echo no | avdmanager create avd --force -n test -k "system-images;android-$EMULATOR_VERSION;$ABI"
 
 script:
-  - ./gradlew assembleAndroidTest
+  - ./gradlew assembleDebugAndroidTest --console=plain --stacktrace
   - $ANDROID_HOME/emulator/emulator -avd test -no-window &
   - bash android-wait-for-emulator
-  - ./gradlew installAndroidTest
+  - ./gradlew installDebugAndroidTest --console=plain --stacktrace
   - adb shell input keyevent 82
   - adb shell am instrument -w com.example.test/android.support.test.runner.AndroidJUnitRunner
 
