@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import androidx.test.platform.app.InstrumentationRegistry;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
 import android.view.WindowManager;
 
 import androidx.test.espresso.accessibility.AccessibilityChecks;
 import androidx.test.rule.ActivityTestRule;
+import androidx.test.runner.AndroidJUnit4;
 
 import org.ea.sqrl.activites.identity.IdentityManagementActivity;
 import org.ea.sqrl.activites.LanguageActivity;
