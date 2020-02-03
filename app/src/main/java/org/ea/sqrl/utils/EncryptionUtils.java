@@ -42,7 +42,7 @@ public class EncryptionUtils {
      * @param data  input data stream.
      * @return      reversed byte stream
      */
-    private static byte[] reverse(byte[] data) {
+    public static byte[] reverse(byte[] data) {
         for(int i = 0; i < data.length / 2; i++) {
             byte temp = data[i];
             data[i] = data[data.length - i - 1];
@@ -142,6 +142,10 @@ public class EncryptionUtils {
         largeBytes = reverse(largeBytes);
         if(largeBytes.length > expectedNumberOfBytes) {
             largeBytes = Arrays.copyOfRange(largeBytes, 0, expectedNumberOfBytes);
+        } else if (largeBytes.length < expectedNumberOfBytes) {
+            byte[] temp = new byte[expectedNumberOfBytes];
+            System.arraycopy(largeBytes, 0, temp, 0, largeBytes.length);
+            largeBytes = temp;
         }
 
         return largeBytes;
@@ -249,7 +253,7 @@ public class EncryptionUtils {
             bytesToHash = digest.digest(bytesToHash);
             byte[] xorKey = Arrays.copyOf(bytesToHash, bytesToHash.length);
 
-            for(int i=0; i<16; i++) {
+            for(int i=0; i<15; i++) {
                 bytesToHash = digest.digest(bytesToHash);
                 xorKey = xor(xorKey, bytesToHash);
             }
