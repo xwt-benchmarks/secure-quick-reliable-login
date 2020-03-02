@@ -31,7 +31,7 @@ android {
         }
         checkTypes {
             javaCompileOptions.annotationProcessorOptions.
-                    classNames.add("org.checkerframework.checker.keystore.KeyStoreChecker")
+                    classNames.add("org.checkerframework.checker.crypto.CryptoChecker")
             // Uncomment to do the strongboxbacked checking.
             // javaCompileOptions.annotationProcessorOptions.arguments.put("lint", "strongboxbacked")
             javaCompileOptions.annotationProcessorOptions.arguments.put("stubs", "hardwarebacked.astub")
@@ -79,8 +79,8 @@ dependencies {
     androidTestImplementation 'com.google.guava:guava:24.1-jre'
 
     ext.checkerFrameworkVersion = '3.1.1'
-    annotationProcessor "org.checkerframework:keystore-checker:0.1-SNAPSHOT"
-    implementation files("../../../../keystore-checker-qual-android/build/libs/keystore-checker-qual-android.jar")
+    annotationProcessor "org.checkerframework:crypto-checker:0.1-SNAPSHOT"
+    implementation files("../../../../crypto-checker-qual-android/build/libs/crypto-checker-qual-android.jar")
     checkerFrameworkAnnotatedJDK files("../../../../jdk8.jar")
     compileOnly "org.checkerframework:checker-qual-android:${checkerFrameworkVersion}"
     errorproneJavac 'com.google.errorprone:javac:9+181-r4173-1'
